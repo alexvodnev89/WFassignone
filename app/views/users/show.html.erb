@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <span class="attr"><%= @user.firstName %></span>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <span class="attr"><%= @user.lastName %></span>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <span class="attr"><%= @user.email %></span>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <span class="attr"><%= @user.admin %></span>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <span class="attr"><%= @user.created_at %></span>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <span class="attr"><%= @user.updated_at %></span
+</p>
+
+<p>
+  <strong>Activated:</strong>
+  <span class="attr"><%= @user.activated %></span>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+<% if current_user && current_user.admin %>
+  <%= link_to 'Back', users_path %>
+<% end %>
+
+</br>
+</br>
+
+<% if current_user && current_user.activated %>
+  <p>Your account is activated, you might access the hidden information</p>
+  <%= link_to 'infoPage', '/infoPage' %>
+<% end %>
+
+    
